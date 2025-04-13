@@ -1,64 +1,100 @@
-<h1 align="center">
-  Spring Security 6 with JWT Authentication <br />
-  <img src="https://img.shields.io/badge/SpringBoot-3.2.2-brightgreen?style=flat-square&logo=springboot" />
-  <img src="https://img.shields.io/badge/SpringSecurity-6.x-blue?style=flat-square&logo=springsecurity" />
-  <img src="https://img.shields.io/badge/JWT-secure-yellowgreen?style=flat-square&logo=jsonwebtokens" />
-</h1>
 
-<p align="center">
-  A microservice-ready backend built using <strong>Spring Security 6</strong> and <strong>JWT</strong> for secure authentication. This project was created to deeply explore secure authentication patterns and service-level protection using Spring Boot.
-</p>
+#  Spring Security 6 + JWT Microservices Authentication System
+
+A comprehensive project to **learn, explore, and implement** robust authentication & authorization using **Spring Security 6**, **JWT (JSON Web Tokens)**, **Spring Boot**, **Hibernate**, and **MySQL**, designed with **microservices architecture** in mind.
+
+This project simulates a real-world secure backend system where user identity and access are managed via stateless token-based authentication. It’s built to be **modular, scalable, and production-ready** for distributed systems.
 
 ---
 
-## 🧩 Frameworks & Libraries Used
+##  Project Description
 
-| Technology          | Description                                      |
-|---------------------|--------------------------------------------------|
-| <img src="https://www.svgrepo.com/show/354380/spring-icon.svg" width="24"/> Spring Boot | Rapid development framework for Java-based web services |
-| <img src="https://www.svgrepo.com/show/354380/spring-icon.svg" width="24"/> Spring Security 6 | Core security framework used to secure the app |
-| <img src="https://www.svgrepo.com/show/303466/jsonwebtokens.svg" width="24"/> JWT (JJWT)     | Used for generating and validating tokens for authentication |
-| <img src="https://www.svgrepo.com/show/303260/mysql-logo.svg" width="24"/> MySQL            | Persistent relational database used for storing user data |
-| <img src="https://www.svgrepo.com/show/376344/hibernate.svg" width="24"/> Hibernate         | ORM tool for mapping Java objects to relational database tables |
-| <img src="https://www.svgrepo.com/show/473620/java.svg" width="24"/> Java 17+         | Language used for all development |
-| <img src="https://www.svgrepo.com/show/303251/bcrypt.svg" width="24"/> BCrypt         | Secure password hashing |
+This project is a deep dive into modern backend security using **Spring Security 6**. It includes features like:
 
----
+-  User registration and secure login
+-  JWT-based stateless authentication
+-  Secure logout and token validation
+-  Layered security filter chain architecture
+-  CSRF protection setup
+-  MySQL-based user management with JPA/Hibernate
+-  Foundation for microservices authentication module
 
-## 📚 What I Learned from This Project
-
-This project wasn't just about building an API — it was a **deep dive into security best practices** and **Spring’s authentication ecosystem**. Here's what I personally learned:
-
-### 1. Understanding Spring Security from the Ground Up
-- Learned how filters work in Spring Security.
-- Explored how authentication providers validate credentials.
-
-### 2. Implementing JWT-Based Authentication
-- Understood how JWT works under the hood (claims, subject, expiration).
-- Built a service to generate and validate tokens.
-- Ensured stateless authentication for RESTful APIs.
-
-### 3. Session & Token Handling
-- Explored session-based authentication vs. stateless authentication.
-- Understood where and how to store token information securely.
-
-### 4. Password Encryption and Storage
-- Used `BCryptPasswordEncoder` to hash passwords.
-- Stored encrypted passwords in the H2 database.
-
-### 5. Custom `UserDetailsService` & `UserDetails`
-- Implemented custom logic to fetch users from the database.
-- Connected domain models to Spring Security’s interface.
-
-### 6. Securing Endpoints by Role & Path
-- Protected `/product` and other APIs using token-based authentication.
-- Used method-level security for fine-grained access control.
-
-### 7. Preparing for Microservices
-- Designed the authentication flow with future microservice scalability in mind.
-- Implemented token validation logic that can be reused across services.
+>  **Goal**: To build real-world experience in secure API development, mastering the flow of security filters, authentication providers, custom configurations, and stateless session handling in distributed systems.
 
 ---
 
-## 🧱 Application Structure
+##  What I Learned
+
+This journey helped me deeply understand several complex backend security concepts. Here's what I took away from it:
+
+###  Why Spring Security 6?
+- It simplifies implementation of enterprise-grade security through filters, configurations, and annotations.
+- Provides a flexible security filter chain and granular role-based access control.
+
+###  Why JWT?
+- Stateless and scalable authentication mechanism, ideal for microservices.
+- Tokens carry user identity and roles — no need to persist sessions on the server.
+- Includes expiration, issuer, and claims to securely authorize users.
+
+###  Why CSRF?
+- CSRF (Cross-Site Request Forgery) prevents unauthorized commands from being transmitted as if done by an authenticated user.
+- Important when cookies are used or dealing with web forms.
+- This project ensures CSRF tokens are disabled for stateless APIs, but taught me how and when to enable them.
+
+###  Why Hibernate + MySQL?
+- Hibernate offers ORM that abstracts SQL complexity and handles transactions and sessions.
+- MySQL offers robust, production-level data storage to persist user credentials securely.
+
+---
+
+##  Technologies & Dependencies Used
+
+| Technology | Purpose |
+|------------|---------|
+| ![Spring Boot](https://www.vectorlogo.zone/logos/springio/springio-icon.svg) **Spring Boot** | Framework for building standalone backend applications |
+| ![Spring Security](https://www.vectorlogo.zone/logos/springio/springio-icon.svg) **Spring Security 6** | Securing REST APIs, roles, filter chains |
+| ![JWT](https://www.vectorlogo.zone/logos/jsonwebtoken/jsonwebtoken-icon.svg) **JJWT (Jackson)** | Stateless authentication and access control |
+| ![Hibernate](https://www.vectorlogo.zone/logos/hibernate/hibernate-icon.svg) **Hibernate** | Object Relational Mapping for DB |
+| ![MySQL](https://www.vectorlogo.zone/logos/mysql/mysql-icon.svg) **MySQL** | Persistent database for user authentication data |
+| ![Maven](https://www.vectorlogo.zone/logos/maven/maven-icon.svg) **Maven** | Project dependency management and build tool |
+
+---
+
+##  Key Concepts Covered
+
+- **Spring Security Core**: Filter chain, authentication manager, security context
+- **JWT Lifecycle**: Generation, validation, expiry, and revocation (logout)
+- **AuthenticationProvider**: Custom logic to verify users from database
+- **UserDetailsService**: DB-driven user fetching instead of in-memory
+- **Token Validation**: Extracting JWT claims securely
+- **Exception Handling**: For expired/invalid/missing tokens
+- **Stateless Session Design**: Statelessness enables scalable services
+- **CSRF Understanding**: When to use it and when to safely disable it
+
+---
+
+##  Architecture (Add These Visuals)
+
+Include your architecture diagrams below this section:
+
+### 1.  JWT Authentication Lifecycle  
+![{47815608-3B08-4A30-BDBA-69516E1E07EE}](https://github.com/user-attachments/assets/0a1d2ce0-8ede-425f-aec2-742778028e43)
+
+
+### 2.  Security Filter Chain Flow  
+![{AC6E58E9-F2CC-43A9-9680-CEC03C674F6E}](https://github.com/user-attachments/assets/2eb077ed-fbed-4a1e-a78c-b0c836543777)
+
+
+---
+
+##  How to Run the Project
+
+1. **Clone the Repo**  
+   ```bash
+   git clone https://github.com/your-username/SpringSecurityLearning.git
+   ```
+2. **Test with Postman**:
+   - `POST /register` – Create new user
+   - `POST /login` – Receive JWT Token
+   - Add token to `Authorization: Bearer <token>` header for protected APIs
 
