@@ -25,7 +25,8 @@ This project is a deep dive into modern backend security using **Spring Security
 
 ##  What I Learned
 
-This journey helped me deeply understand several complex backend security concepts. Here's what I took away from it:
+Built a Security Microservice while gaining in-depth knowledge of Spring Security 6 and understanding how different frameworks integrate and function together.
+Creating and branching various API calls significantly improved my debugging skills and deepened my grasp of secure backend architecture and real-world authentication workflows.
 
 ###  Why Spring Security 6?
 - It simplifies implementation of enterprise-grade security through filters, configurations, and annotations.
